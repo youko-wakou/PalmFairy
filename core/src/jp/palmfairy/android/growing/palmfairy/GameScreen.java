@@ -27,6 +27,7 @@ public class GameScreen extends ScreenAdapter {
 //        背景画像
         Texture bgTexture = new Texture("bagset.png");
         mBg = new Sprite(new TextureRegion(bgTexture,0,0,540,810));
+        mBg.setSize(CAMERA_WIDTH,CAMERA_HEIGHT);
         mBg.setPosition(0,0);
 
         mCamera = new OrthographicCamera();
@@ -42,7 +43,7 @@ public class GameScreen extends ScreenAdapter {
         mPalamFairyGame.batch.setProjectionMatrix(mCamera.combined);
 
         mPalamFairyGame.batch.begin();
-        mBg.setPosition(mCamera.position.x - CAMERA_WIDTH,mCamera.position.y - CAMERA_HEIGHT/2);
+        mBg.setPosition(mCamera.position.x - CAMERA_WIDTH/2,mCamera.position.y - CAMERA_HEIGHT/2);
         mBg.draw(mPalamFairyGame.batch);
         mPalamFairyGame.batch.end();
     }
